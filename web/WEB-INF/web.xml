@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>AddServlet</servlet-name>
+        <servlet-class>com.atguigu.servlets.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddServlet</servlet-name>
+        <url-pattern>/pages/fruit</url-pattern>
+    </servlet-mapping>
+    <!--
+       1.用户发送请求，action=add
+       2.项目中，web.xml中找到url-pattern=/add
+       3.找到第11行的servlet-name=AddServlet
+       4.找到servlet-mapping中servlet-name>一致的servlet，也就是第7行
+       5.然后找到第8行的servlet-class->com.atguigu.servlets.AddServlet
+       6.用户发送的是post请求（method=post） ，因此tomact会执行AddServlet当中的doPost方法
+    -->
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>com.atguigu.servlets.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/pages/helloServlet</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>view-prefix</param-name>
+        <param-value>/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>view-suffix</param-name>
+        <param-value>.html</param-value>
+    </context-param>
+</web-app>
+
+
