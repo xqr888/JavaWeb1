@@ -29,5 +29,6 @@ public class AddServlet extends HttpServlet {
         boolean flag = fruitDAO.addFruit(new Fruit(0 , fname , Integer.parseInt(fprice) , Integer.parseInt(fcount) , remark));
 
         System.out.println(flag ? "添加成功！" : "添加失败！");
+        System.out.println(flag ? "pushtest！" : "添加失败！");
     }
 }
